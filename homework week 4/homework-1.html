@@ -1,0 +1,205 @@
+<html>
+  <head>
+    <title>Template</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+      body {
+        margin: 0px;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+      }
+      .header-items-list {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        margin: 0 20;
+      }
+      .header-item-avatar {
+        width: 30px;
+      }
+      .header-item-icon {
+        width: 30px;
+      }
+      .body {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+      }
+      .logo {
+        width: 300px;
+      }
+      .search {
+        position: relative;
+      }
+
+      .input {
+        border-radius: 60px;
+        width: 700px;
+        height: 46px;
+        padding-left: 50px;
+        font-size: 20px;
+      }
+      .search-left-section {
+        position: absolute;
+        width: 30px;
+        top: 8px;
+        left: 11px;
+      }
+      .search-right-section {
+        position: absolute;
+        top: 5px;
+        left: 661px;
+        width: 35px;
+      }
+      .search-right-sections {
+        position: absolute;
+        top: 4px;
+        left: 628px;
+        width: 35px;
+      }
+      .controls {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .search-items {
+        display: none;
+        z-index: 1000;
+        position: absolute;
+        top: 48px;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgb(0, 0, 0, 0.2);
+        border-radius: 30px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+      .search-items-list .search-items-list img {
+        height: 20px;
+        margin-right: 20px;
+      }
+      .footer {
+        display: flex;
+        justify-content: space-between;
+      }
+      .footer-1 {
+        display: flex;
+        margin: 0 20px;
+        gap: 25px;
+      }
+
+      .australia {
+        margin: 10 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header-items-list">
+          <a>about</a>
+          <a>store</a>
+        </div>
+        <div class="header-items-list">
+          <a>gmail</a>
+          <a>image</a>
+          <a>
+            <img
+              class="header-item-icon"
+              src="https://www.svgrepo.com/show/532198/list-ul-alt.svg"
+            />
+          </a>
+          <a>
+            <img
+              class="header-item-avatar"
+              src="https://www.svgrepo.com/show/492689/avatar-boy.svg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="body">
+        <div>
+          <img
+            class="logo"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+          />
+        </div>
+        <div class="search">
+          <input class="input" />
+          <img
+            class="search-left-section"
+            src="https://www.svgrepo.com/show/532554/search-alt.svg"
+          />
+
+          <div>
+            <img
+              class="search-right-section"
+              src="https://www.svgrepo.com/show/528402/microphone.svg"
+            />
+            <img
+              class="search-right-sections"
+              src="https://www.svgrepo.com/show/528090/camera-minimalistic.svg"
+            />
+          </div>
+          <div class="search-items">
+            <div class="search-items-list">
+              <div>
+                <img
+                  src="https://www.svgrepo.com/show/532554/search-alt.svg"
+                />software engineer
+              </div>
+              <div>
+                <img
+                  src="https://www.svgrepo.com/show/532554/search-alt.svg"
+                />Software engineer <span>sydney</span>
+              </div>
+              <div>
+                <img
+                  src="https://www.svgrepo.com/show/532554/search-alt.svg"
+                />software engineer <span>salary</span>
+              </div>
+              <div>
+                <img
+                  src="https://www.svgrepo.com/show/532554/search-alt.svg"
+                />software engineer <span>salary sydney</span>
+              </div>
+              <div>
+                <img
+                  src="https://www.svgrepo.com/show/532554/search-alt.svg"
+                />software engineer <span>jobs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="controls">
+          <button>Google Search</button>
+          <button>I'm Feeling Lucky</button>
+        </div>
+      </div>
+
+      <div class="Australia">Australia</div>
+      <div class="footer">
+        <div class="footer-1">
+          <a>Advertising</a>
+          <a>Business</a>
+          <a>How Search works</a>
+        </div>
+        <div class="footer-1">
+          <a>Privacy</a>
+          <a>Terms</a>
+          <a>Settings</a>
+        </div>
+      </div>
+    </div>
+    <script></script>
+  </body>
+</html>

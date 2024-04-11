@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Template</title>
+    <style>
+      body {
+        background-color: black;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+        border-bottom: 1px solid lightgray;
+        padding-bottom: 10px;
+      }
+      form {
+        background-color: white;
+        width: 450px;
+        margin: 30px auto;
+        padding: 30px;
+        border: 2px solid lightgray;
+        border-radius: 10px;
+      }
+      }
+      .text-input,
+      textarea,
+      select {
+        width: 100%;
+        border-radius: 6px;
+        border: 2px solid lightgray;
+        margin-top: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 18px;
+      }
+
+      button {
+        width: 100%;
+        height: 50px;
+        background-color: lightgreen;
+        border: none;
+        border-radius: 6px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      button:hover {
+        background-color: lightseagreen;
+      }
+      .input-field {
+        margin-bottom: 20px;
+      }
+      .checkbox-field {
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <h1>About me</h1>
+      <div class="input-field">
+        <label
+          >Name
+          <input class="text-input" type="text" name="name" />
+        </label>
+      </div>
+      <div class="input-field">
+        <label
+          >Age
+          <input class="text-input" type="number" name="age" />
+        </label>
+      </div>
+      <div class="input-field">
+        <label
+          >DoB
+          <input class="text-input" type="date" name="dob" />
+        </label>
+      </div>
+
+      <div class="input-field">
+        <label>About me</label>
+        <textarea name="about-me"></textarea>
+      </div>
+
+      <div class="input-field">
+        <label>Gender</label>
+        <select name="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Con-be-due</option>
+        </select>
+      </div>
+
+      <div class="input-field">
+        <div>Hobbies</div>
+        <div class="checkbox-field">
+          <label>
+            <input type="checkbox" name="hobbies" value="gym" /> gym
+          </label>
+        </div>
+        <div class="checkbox-field">
+          <label>
+            <input type="checkbox" name="hobbies" value="film" /> film
+          </label>
+        </div>
+        <div class="checkbox-field">
+          <label>
+            <input type="checkbox" name="hobbies" value="running" /> running
+          </label>
+        </div>
+      </div>
+
+      <div class="input-field">
+        Are you crazy?
+        <label><input type="radio" name="codeninja" value="yes" />Yes</label>
+        <label><input type="radio" name="codeninja" value="no" />No</label>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

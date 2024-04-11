@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Template</title>
+  </head>
+  <body>
+    <script>
+      function sum(x, y) {
+        let result = x + y;
+        return result;
+      }
+      let sumResult = sum(12, 25);
+
+      console.log('sum result', sumResult);
+
+      function nhiet(x) {
+        let kq = ((x - 32) * 5) / 9;
+        return kq;
+      }
+
+      let cTemperature = nhiet(41);
+
+      console.log('temperature result', cTemperature);
+
+      function toan(x, y, z) {
+        let tong = (x + y) / z;
+        return tong;
+      }
+      let ketQua = toan(8, 4, 6);
+      console.log('ket qua dat duoc', ketQua);
+    </script>
+  </body>
+</html>

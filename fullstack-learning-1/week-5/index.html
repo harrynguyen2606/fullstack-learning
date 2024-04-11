@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Week 5</title>
+    <style>
+      div {
+        min-height: 30px;
+        background-color: #ddd;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="create-summary-button">Create Summary</button>
+    <div class="create-summary-result"></div>
+  </body>
+  <script>
+    function createSummary(firstName, lastName, age, isHandsome) {
+      let summary = `My name is ${firstName} ${lastName}, I am ${age} years old and I am handsome? ${isHandsome}`;
+
+      return summary;
+    }
+    let mySummary = createSummary('Jack', 'Vo', 40, true);
+    console.log(mySummary);
+    let createSummaryButton = document.querySelector('.create-summary-button');
+    let createSummaryResult = document.querySelector('.create-summary-result');
+    createSummaryButton.addEventListener('click', function () {
+      let mySummary = createSummary('Jack', 'Vo', 40, true);
+      createSummaryResult.textContent = mySummary;
+    });
+  </script>
+</html>

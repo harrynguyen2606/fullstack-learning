@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Week 6 - Answer</title>
+  </head>
+  <body>
+    <script>
+      //============================================
+      function introduceMySelf(name, age) {
+        let result = `I am ${name}! I am ${age} years old!`;
+
+        return result;
+      }
+
+      let introduceMySelfTestResult = introduceMySelf('Jack Vo', 40);
+
+      console.log('introduceMySelf', introduceMySelfTestResult);
+
+      //============================================
+      function getSentenceLength(sentence) {
+        let length = sentence.length;
+
+        return length;
+      }
+
+      let getSentenceLengthTestResult = getSentenceLength('Hello, today');
+
+      console.log('getSentenceLength', getSentenceLengthTestResult);
+
+      //============================================
+      function add(x, y) {
+        let result = x + y;
+
+        return result;
+      }
+
+      let addTestResult = add(10, 30);
+
+      console.log('add', addTestResult);
+
+      //============================================
+      function minus(x, y) {
+        let result = x - y;
+
+        return result;
+      }
+
+      let minusTestResult = minus(40, 10);
+
+      console.log('minus', minusTestResult);
+
+      //============================================
+      function multiply(x, y) {
+        let result = x * y;
+
+        return result;
+      }
+
+      let multiplyTestResult = multiply(10, 30);
+
+      console.log('multiply', multiplyTestResult);
+
+      //============================================
+      function divide(x, y) {
+        let result = x / y;
+
+        return result;
+      }
+
+      let divideTestResult = divide(30, 15);
+
+      console.log('divide', divideTestResult);
+
+      //============================================
+      function getAverage(x, y) {
+        let total = sum(x, y);
+        let result = divide(total, 2);
+
+        return result;
+      }
+
+      let getAverageTestResult = getAverage(10, 30);
+
+      console.log('getAverage', getAverageTestResult);
+
+      //============================================
+      function checkExamResult(score) {
+        if (score >= 50) {
+          return 'Pass';
+        } else {
+          return 'Fail';
+        }
+      }
+
+      let checkExamResultTestResult = checkExamResult(65);
+
+      console.log('checkExamResult', checkExamResultTestResult);
+
+      //============================================
+      function getGrade(score) {
+        if (score >= 90) {
+          return 'A';
+        } else if (score >= 80) {
+          return 'B';
+        } else if (score >= 70) {
+          return 'C';
+        } else if (score >= 60) {
+          return 'D';
+        } else if (score >= 50) {
+          return 'E';
+        } else {
+          return 'F';
+        }
+      }
+
+      let getGradeTestResult = getGrade(65);
+
+      console.log('getGrade', getGradeTestResult);
+
+      //============================================
+      function printNumbers(number) {
+        for (let i = 1; i <= number; i++) {
+          console.log(i);
+        }
+      }
+
+      printNumbers(10);
+
+      //============================================
+      function printNames(names) {
+        for (let i = 0; i < names.length; i++) {
+          let currentName = names[i];
+
+          console.log(currentName);
+        }
+      }
+
+      printNames(['Jack Vo', 'Henry', 'Naomi']);
+
+      //============================================
+      function printFavouriteGames(games) {
+        for (let i = 0; i < games.length; i++) {
+          const currentGame = games[i];
+
+          // Our index starts from 0 but the string we want to create
+          // starts from 1 which means we just need to add 1 to each index
+          // to achieve the number we want to print at the beginning
+          const currentNumber = i + 1;
+
+          console.log(`${currentNumber}. I love ${currentGame}!`);
+        }
+      }
+
+      printFavouriteGames(['Resident Evil', 'Final Fantasy', 'Street Fighter']);
+
+      //============================================
+      function findAnimalIndex(animals, animalName) {
+        for (let i = 0; i < animals.length; i++) {
+          let currentAnimalName = animals[i];
+
+          if (currentAnimalName === animalName) {
+            return i;
+          }
+        }
+
+        return 'Not found';
+      }
+
+      let findAnimalIndexTestResult = findAnimalIndex(
+        ['Elephant', 'Lion', 'Eagle'],
+        'Lion'
+      );
+
+      console.log('findAnimalIndex', findAnimalIndexTestResult);
+
+      //============================================
+      function getNumbersLargerThanTen(numbers) {
+        let result = [];
+
+        for (let i = 0; i < numbers.length; i++) {
+          const currentNumber = numbers[i];
+
+          if (currentNumber > 10) {
+            result.push(currentNumber);
+          }
+        }
+
+        return result;
+      }
+
+      let getNumbersLargerThanTenTestResult = getNumbersLargerThanTen([
+        10, 1, -5, 100, 99, 45,
+      ]);
+
+      console.log('getNumbersLargerThanTen', getNumbersLargerThanTenTestResult);
+
+      //============================================
+      function sum(numbers) {
+        let result = 0;
+
+        for (let i = 0; i < numbers.length; i++) {
+          const currentNumber = numbers[i];
+
+          result = result + currentNumber;
+        }
+
+        return result;
+      }
+
+      let sumTestResult = sum([10, 1, -5, 15, 100011]);
+
+      console.log('sum', sumTestResult);
+
+      //============================================
+      function getArrayAverage(numbers) {
+        let total = sum(numbers);
+        let result = total / numbers.length;
+
+        return result;
+      }
+
+      let getArrayAverageTestResult = getArrayAverage([10, 1, 11, 12381, 2293]);
+
+      console.log('getArrayAverage', getArrayAverageTestResult);
+
+      //============================================
+      function multiplicationTable(number) {
+        for (let i = 1; i <= number; i++) {
+          // Calculate the final value based on the current index
+          // like 3 * 2 ---> 6
+          let currentValue = number * i;
+          let message = `${number} * ${i} = ${currentValue}`;
+
+          console.log(message);
+        }
+      }
+
+      multiplicationTable(12);
+    </script>
+  </body>
+</html>

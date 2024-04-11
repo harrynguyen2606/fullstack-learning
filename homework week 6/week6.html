@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Template</title>
+  </head>
+  <body>
+    <script>
+      function introduce(name, age) {
+        let result = `Im ${name}, I am ${age}, I live in Cabramatta`;
+        return result;
+      }
+      let introduceTest = introduce('harry', 34);
+      console.log('gioi thieu ban than', introduceTest);
+
+      function testlength(sentence) {
+        let length = sentence.lenghth;
+        return length;
+      }
+      let result = testlength('vai bai tap');
+      console.log('thereare', result);
+      function add(x, y) {
+        let result = x + y;
+        return result;
+      }
+      let addResult = add(8, 3);
+      console.log('sum is ', addResult);
+
+      function minus(x, y) {
+        let result = x - y;
+        return result;
+      }
+      let minusResult = minus(10, 4);
+      console.log('x - y = ', minusResult);
+
+      function divide(x, y) {
+        let result = x / y;
+        return result;
+      }
+      let divideResult = divide(14, 7);
+      console.log('x : y = ', divideResult);
+
+      function multi(x, y) {
+        let result = x * y;
+        return result;
+      }
+      let multiResult = multi(10, 4);
+      console.log('X x Y =  ', multiResult);
+
+      function getAverage(x, y) {
+        let result = (x + y) / 2;
+        return result;
+      }
+      let getAverageResult = getAverage(20, 10);
+      console.log('trung binh x va y la ', getAverageResult);
+
+      function textExam(score) {
+        if (score >= 50) {
+          return 'passed';
+        } else {
+          return 'failed';
+        }
+      }
+      let total = textExam(51);
+      console.log('result is', total);
+
+      function textSkill(grade) {
+        if (grade >= 80) {
+          return 'very failed';
+        } else if (grade >= 70) {
+          return 'good';
+        }else if (grade >=50) {return'so so';}
+        else {return,'ok'}      }
+        let resultok = textSkill(65)
+        console.log('ket qua la', resultok);
+    </script>
+  </body>
+</html>

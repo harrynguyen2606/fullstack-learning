@@ -1,0 +1,115 @@
+body {
+  margin: 100px;
+  display: flex;
+  justify-content: center;
+}
+.input-wrapper {
+  position: relative;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.calculator-input {
+  flex: 1;
+  border: 2px solid #dbdce0;
+  border-radius: 4px;
+  outline: none;
+  font-size: 30px;
+  font-weight: lighter;
+  letter-spacing: 2px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  text-align: right;
+}
+
+.input-equation {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 16px;
+  color: #999;
+}
+
+.row {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+.calculator-btn {
+  width: 100px;
+  height: 50px;
+  background-color: #dbdce0;
+  border: none;
+  border-radius: 4px;
+  font-size: 20px;
+  color: #4d4e52;
+}
+
+.calculator-btn:hover {
+  background-color: #666;
+  color: #fff;
+}
+
+.calculator-btn:disabled {
+  opacity: 0.5;
+}
+
+.calculator-result-btn {
+  background-color: #4286f4;
+  color: #fff;
+}
+
+.calculator-result-btn:hover {
+  background-color: #1f5fc7;
+}
+
+.calculator-del-btn {
+  background-color: #f44242;
+  color: #fff;
+}
+
+.calculator-del-btn:hover {
+  background-color: #c11d1d;
+}
+.input-history {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.input-history.open .input-history-list {
+  display: block;
+}
+.input-history.open .input-history-button {
+  background-color: #dbdce0;
+}
+.input-history-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: transparent;
+}
+.input-history-button:hover {
+  background-color: #dbdce0;
+}
+.input-history-list {
+  display: none;
+  margin-top: 3px;
+  max-height: 200px;
+  max-width: 500px;
+  overflow: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.input-history-list div {
+  padding: 10px;
+}
+.input-history-list div:hover {
+  background-color: #dbdce0;
+  cursor: pointer;
+}

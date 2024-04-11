@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Template</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      function isGreaterThanTen(number) {
+        if (number > 10) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      let numberTestResult = isGreaterThanTen(7);
+
+      console.log('Is 7 larger than 10', numberTestResult);
+
+      function isGreaterThanTenAndSmallerThanFifteen(number) {
+        if (number > 10 && number < 15) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      let anotherNumberTestResult = isGreaterThanTenAndSmallerThanFifteen(13);
+
+      console.log(
+        'Is 13 larger than 10 and smaller than 15',
+        anotherNumberTestResult
+      );
+      function isGreaterThanTenOrSmallerThanZero(number) {
+        if (number > 10 || number < 0) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      let justAnotherNumberTestResult = isGreaterThanTenOrSmallerThanZero(13);
+
+      console.log(
+        'Is -5 larger than 10 or smaller than 0',
+        justAnotherNumberTestResult
+      );
+    </script>
+  </body>
+</html>

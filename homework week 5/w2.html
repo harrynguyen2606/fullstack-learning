@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Week 5 - Homework 2</title>
+    <style>
+      body {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 20px;
+        line-height: 1.5;
+      }
+
+      .container {
+        width: 450px;
+        margin: 50px auto;
+        padding: 30px;
+        background-color: #e4dddd;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      div {
+        margin-bottom: 15px;
+      }
+
+      button {
+        margin-top: 20px;
+        border: none;
+        background-color: rgb(23, 233, 23);
+        color: #fff;
+        font-size: 24px;
+        width: 100%;
+        height: 50px;
+      }
+
+      button:hover {
+        background-color: rgb(163, 10, 41);
+      }
+
+      .row {
+        display: flex;
+        gap: 40px;
+      }
+
+      .col-lg {
+        flex: 1;
+      }
+
+      .col-sm {
+        width: 150px;
+      }
+
+      .input {
+        width: 100%;
+        border: 1px solid #666;
+        border-radius: 20px;
+        height: 40px;
+        text-indent: 14px;
+        font-size: 28px;
+        color: #666;
+      }
+
+      .summary-result {
+        background-color: rgb(126, 182, 179);
+        font-size: 30px;
+        padding: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-lg">
+        <label>
+          First name
+          <input
+            class="input firstname-input"
+            type="text"
+            name="firstname"
+            min="3"
+            max="100"
+          />
+        </label>
+      </div>
+      <div class="col-lg">
+        <label>
+          Last name
+          <input
+            class="input lastname-input"
+            type="text"
+            name="lastname"
+            min="3"
+            max="100"
+          />
+        </label>
+      </div>
+      <div class="col-sm">
+        <label>
+          Age
+          <input
+            class="input age-input"
+            type="number"
+            name="age"
+            min="1"
+            max="140"
+          />
+        </label>
+      </div>
+
+      <div class="summary-result"></div>
+
+      <button>Create a summary</button>
+    </div>
+
+    <script>
+      function createSummary(firstname, lastname, age) {
+        return `Hello, my name is ${firstname} ${lastname}. I am ${age} years old!`;
+      }
+
+      let button = document.querySelector('button');
+      let firstnameInput = document.querySelector('.firstname-input');
+      let lastnameInput = document.querySelector('.lastname-input');
+      let ageInput = document.querySelector('.age-input');
+      let summaryResult = document.querySelector('.summary-result');
+
+      button.addEventListener('click', function () {
+        let firstname = firstnameInput.value;
+        let lastname = lastnameInput.value;
+        let age = ageInput.value;
+        let summary = createSummary(firstname, lastname, age);
+
+        summaryResult.textContent = summary;
+      });
+    </script>
+  </body>
+</html>
