@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Responsive design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <style>
+    body {
+      margin: 0;
+    }
+    ul {
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      padding: 10px;
+    }
+
+    /* Mobile styles */
+    .container {
+      height: 100vh;
+    }
+
+    .sidebar {
+      background-color: #222;
+    }
+
+    .sidebar a {
+      color: #fff;
+    }
+
+    .content {
+      padding: 20px;
+    }
+    .menu {
+      display: none; /* Comment - Hide our default menu in mobile */
+    }
+    .open {
+      display: block; /* Comment - Make our default menu visible */
+    }
+    /* Media query for desktops and above */
+    @media (min-width: 720px) {
+      .container {
+        display: flex;
+      }
+
+      .sidebar {
+        width: 250px;
+      }
+
+      .menu {
+        display: block; /* Show our default menu in desktop */
+      }
+
+      .content {
+        flex: 1;
+      }
+
+      .mobile-menu-button {
+        display: none; /* Hide mobile menu button on desktop */
+      }
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <!-- Mobile Trigger -->
+        <button class="mobile-menu-button">Menu</button>
+        <!-- Sidebar Content / Mobile menu -->
+        <ul class="menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <main class="content">
+        <h1>Welcome to Our Website</h1>
+        <p>This is the content section.</p>
+      </main>
+    </div>
+
+    <script>
+      // when we click the menu button .mobile-menu-button
+      // we check if .menu has class "open"
+      // if it has class "open", remove class"open" // if not, add class "open"
+      const menuButton = document.querySelector('.mobile-menu-button');
+      const menu = document.querySelector('.menu');
+      const onMenuButtonClicked = function () {
+        if (menu.classList.contains('open')) {
+          menu.classList.remove('open');
+        } else {
+          menu.classList.add('open');
+        }
+      };
+
+      menuButton.addEventListener('click', onMenuButtonClicked);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+  </head>
+  <style>
+    body {
+      margin: 100px;
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+
+  <body>
+    <div>
+      <div>
+        <input class="calculator-input" />
+      </div>
+      <div>
+        <div>
+          <button class="calculator-btn">(</button>
+          <button class="calculator-btn">)</button>
+          <button class="calculator-btn">DEL</button>
+          <button class="calculator-btn">AC</button>
+        </div>
+        <div>
+          <button class="calculator-btn">7</button>
+          <button class="calculator-btn">8</button>
+          <button class="calculator-btn">9</button>
+          <button class="calculator-btn">/</button>
+        </div>
+        <div>
+          <button class="calculator-btn">4</button>
+          <button class="calculator-btn">5</button>
+          <button class="calculator-btn">6</button>
+          <button class="calculator-btn">*</button>
+        </div>
+        <div>
+          <button class="calculator-btn">1</button>
+          <button class="calculator-btn">2</button>
+          <button class="calculator-btn">3</button>
+          <button class="calculator-btn">-</button>
+        </div>
+        <div class="row">
+          <button class="calculator-btn">0</button>
+          <button class="calculator-btn">.</button>
+          <button class="calculator-btn">=</button>
+          <button class="calculator-btn">+</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let input = document.querySelector('.calculator-input');
+      let buttons = document.querySelectorAll('.calculator-btn');
+      let onCalculatorButtonClick = function (event) {
+        let action = event.currentTarget.textContent;
+        let inputValue = input.value;
+        let newValue = inputValue + action;
+        input.value = newValue;
+        if (action === 'AC') {
+          clearInput();
+        }
+        if (action === 'AC' || action === 'DEL') {
+        } else {
+          let inputValue = input.value;
+          let newValue = inputValue + action;
+
+          input.value = newValue;
+        }
+      };
+
+      for (let i = 0; i < buttons.length; i++) {
+        let currentButton = buttons[i];
+
+        currentButton.addEventListener('click', onCalculatorButtonClick);
+      }
+    </script>
+  </body>
+</html>
