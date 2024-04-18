@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Counter</title>
+  </head>
+  <body>
+    <button class="minus">- 1</button>
+    <input type="number" type="number" value="0" />
+    <button class="plus">+ 1</button>
+  </body>
+  <script>
+    //first step, we need to select those elements and save them to variable
+    let minusButton = document.querySelector('.minus');
+    let plusButton = document.querySelector('.plus');
+    let resultInput = document.querySelector('.result');
+    // add click event to those 2 button
+    let onMinusButtonClick = function () {
+      // clicked button, the input value will be decreased by 1
+      // Get current value of the input
+      let currentValue = resultInput.value;
+      // Decrease the current value by 1
+      let newValue = currentvalue - 1;
+      // set the new vatue to input
+      resultInput.value = newvalue;
+    };
+    minusButton.addEventListener('click', onMinusButtonClick);
+  </script>
+</html>

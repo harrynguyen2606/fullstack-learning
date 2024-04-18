@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+}
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-wrapper {
+  padding: 20px;
+}
+
+.logo {
+  width: 100px;
+}
+
+/* Side bar */
+.sidebar {
+  position: relative;
+  width: 200px;
+  background-color: #111;
+}
+
+.sidebar-toggle-button {
+  position: absolute;
+  top: 15px;
+  height: 40px;
+  right: 0;
+}
+.sidebar-toggle-button img {
+  width: 20px;
+}
+.sidebar-items {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+}
+.sidebar-items img {
+  width: 24px;
+}
+.sidebar-items button {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  gap: 10px;
+  width: 100%;
+}
+/* Tabs */
+.tabs {
+  width: 600px;
+  min-height: 400px;
+  padding: 20px;
+  border: 2px solid #ccc;
+}
+.tabs-nav {
+  display: flex;
+  list-style-type: none;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+.tabs-trigger {
+  width: 80px;
+  height: 40px;
+}
+.sidebar.collapsed span {
+  display: none;
+}
+
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.sidebar.collapsed .sidebar-toggle-button img {
+  transform: rotate(180deg);
+}
+
+.sidebar.collapsed .sidebar-toggle-button {
+  right: -35px;
+}
+.logo-sm {
+  width: 30px;
+  display: none;
+}
+.sidebar.collapsed .logo-sm {
+  display: block;
+}
+.sidebar.collapsed .logo {
+  display: none;
+}
+.tabs-trigger.active {
+  background-color: #222;
+  color: #fff;
+}
+.tabs-panel {
+  display: none;
+}
+
+.tabs-panel.active {
+  display: block;
+}
