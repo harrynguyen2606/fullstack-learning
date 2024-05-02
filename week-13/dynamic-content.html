@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo list</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script
+      crossorigin="anonymous"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
+  </head>
+  <body>
+    <div clas="container">
+      <button class="btn btn-outline-primary">Add new list item</button>
+      <button class="btn btn-outline-secondary">
+        Add new list item using <code>innerHTML</code>
+      </button>
+
+      <ul class="list-group mt-2"></ul>
+    </div>
+    <script>
+      let primaryButton = document.querySelector('.btn-outline-primary');
+      let secondaryButton = document.querySelector('.btn-outline-secondary');
+      let listGroup = document.querySelector('.list-group');
+
+      let onPrimaryButonClick = function () {
+        let newItem = document.createElement('li');
+
+        newItem.classList.add('list-group-item');
+
+        newItem.innerHTML = 'New Item';
+
+        let newButton = document.createElement('button');
+
+        newButton.classList.add('btn', 'btn-warning');
+        newButton.innerHTML = 'New button';
+        newButton.addEventListener('click', function () {
+          alert('hello');
+        });
+
+        newItem.appendChild(newButton);
+
+        listGroup.appendChild(newItem);
+      };
+      let onSecondaryButtonClick = function () {
+        let newItemHTML = `
+        <li class="list-group-item">
+            New Item
+            <button class="btn btn-info">New button</button>
+        </li>
+        `;
+
+        listGroup.innerHTML = listGroup.innerHTML + newItemHTML;
+
+        let allButtons = listGroup.querySelectorAll('.btn-info');
+
+        let lastestButton = allButtons[allButtons.length - 1];
+
+        lastestButton.addEventListener('click', function () {
+          alert('Info clicked');
+        });
+      };
+
+      primaryButton.addEventListener('click', onPrimaryButonClick);
+      secondaryButton.addEventListener('click', onSecondaryButtonClick);
+    </script>
+  </body>
+</html>
