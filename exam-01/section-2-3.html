@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Debugging Exercise: To-Do List</title>
+  </head>
+  <body>
+    <h1>To-Do List</h1>
+    <input id="taskInput" type="text" placeholder="Add a new task" />
+    <button data-component="add">Add Task</button>
+    <ul class="taskList"></ul>
+
+    <script>
+      // Select Add button
+      let addTaskButton = document.querySelector('[data-component="add"]');
+
+      // Add click event to addTask
+      addTaskButton.addEventListener('click', addTask);
+
+      // Function to add a new task from the input box
+      function addTask() {
+        // Select the input
+        let input = document.querySelector('#taskInput');
+
+        // Get the value from the input
+        let newTask = input.value;
+
+        // Check if the input is not empty
+        if (newTask) {
+          let listItem = createTaskItem(newTask);
+
+          document.querySelector('.taskList').appendChild(listItem);
+          input.value = ''; // Clear the input after adding
+        } else {
+          // throw alert if the input is empty
+          alert('Please enter a task.');
+        }
+      }
+      // Function to create a new list item for the task
+      function createTaskItem(task) {
+        let listItem = document.createElement('ul');
+
+        listItem.innerHTML = `
+            ${task}
+            <button data-component="delete">Delete</button>
+        `;
+
+        // Adding a delete button to the task
+        let deleteBtn = listItem.querySelector('[data-component="delete"]');
+
+        // Event listener for deleting a task
+        // When calling this method, I want to remove the listItem from the page
+        deleteBtn.addEventListener('click', onDeleteButtonClick);
+
+        return listItem; // Return the new list item
+      }
+
+      // Function to remove the <li> Todo item when the Delete button is clicked
+      function onDeleteButtonClick(event) {
+        // Get the current button
+        let currentButton = event.target;
+        // Get the <li> which is the parent of the Delete button
+        let listItem = currentButton.parentElement;
+
+        // remove the Todo <li> from the page
+        listItem.remove();
+      }
+
+      // Function to mark a task as completed
+      function toggleTaskCompleted(event) {
+        event.target.classList.toggle('completed');
+      }
+    </script>
+  </body>
+</html>
