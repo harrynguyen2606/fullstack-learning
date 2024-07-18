@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Full Name Collector</title>
+    <style>
+      body {
+        background-color: #f4f4f4;
+      }
+      .container {
+        margin: 50px;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      input,
+      button {
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      button {
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        border: none;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .fullname {
+        margin-top: 20px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Enter Your Names</h2>
+
+      <input type="text" placeholder="First Name" class="firstname" />
+      <input type="text" placeholder="Last Name" class="lastname" />
+      <button>Show Full Name</button>
+      <div class="fullname"></div>
+    </div>
+
+    <script>
+      let firstNameInput = document.querySelector('.firstname');
+      let lastNameInput = document.querySelector('.lastname');
+      let fullNameText = document.querySelector('.fullname');
+      let button = document.querySelector('button');
+      let onButtonClicked = function () {
+        let firstname = firstNameInput.value;
+        let lastname = lastNameInput.value;
+
+        fullNameText.innerHTML = `Full name: ${firstname}${lastname}`;
+      };
+
+      button.addEventListener('click', onButtonClicked);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Display Person Details</title>
+    <style>
+      body {
+        background-color: #f4f4f4;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .card {
+        width: 550px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .card-title {
+        margin: 0;
+        border-bottom: 1px solid #e0e0e0;
+        padding: 20px;
+      }
+      .card-body {
+        padding: 20px;
+        min-height: 100px;
+        font-size: 20px;
+      }
+
+      .card-footer {
+        display: flex;
+        justify-content: end;
+        border-top: 1px solid #e0e0e0;
+        padding: 10px;
+      }
+
+      button {
+        padding: 10px 20px;
+        border: 1px solid #007bff;
+        border-radius: 4px;
+        background-color: white;
+        color: #007bff;
+        font-size: 20px;
+      }
+      button:hover {
+        background-color: #0056b3;
+        color: white;
+      }
+
+      .label {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h2 class="card-title">Person Details</h2>
+      <div class="card-body">Content hidden</div>
+      <div class="card-footer">
+        <button>Show Details</button>
+      </div>
+    </div>
+
+    <script>
+      // Define a static person object
+      let person = {
+        firstName: 'John',
+        lastName: 'Doe',
+        age: 30,
+        occupation: 'Software engineer',
+      };
+      let cardBody = document.querySelector('.card-body');
+      let button = document.querySelector('button');
+      let isShowingDetails = false;
+      let onButtonClicked = function () {
+        if (isShowingDetails) {
+          isShowingDetails = false;
+          button.innerHTML = 'Show Details';
+          cardBody.innerHTML = 'Content hidden';
+        } else {
+          isShowingDetails = true;
+          button.innerHTML = 'Hide Details';
+          cardBody.innerHTML = `
+                <p><span class="label">Name:</span> ${person.firstName} ${person.lastName}</p>
+                <p><span class="label">Age:</span> ${person.age}</p>
+                <p><span class="label">Occupation:</span> ${person.occupation}</p>
+            `;
+        }
+      };
+
+      button.addEventListener('click', onButtonClicked);
+    </script>
+  </body>
+</html>

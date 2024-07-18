@@ -3,6 +3,7 @@
   <head>
     <title>Calculator</title>
   </head>
+
   <style>
     body {
       margin: 100px;
@@ -53,26 +54,16 @@
     <script>
       let input = document.querySelector('.calculator-input');
       let buttons = document.querySelectorAll('.calculator-btn');
+
       let onCalculatorButtonClick = function (event) {
         let action = event.currentTarget.textContent;
         let inputValue = input.value;
         let newValue = inputValue + action;
+
         input.value = newValue;
-        if (action === 'AC') {
-          clearInput();
-        }
-        if (action === 'AC' || action === 'DEL') {
-        } else {
-          let inputValue = input.value;
-          let newValue = inputValue + action;
-
-          input.value = newValue;
-        }
       };
-
       for (let i = 0; i < buttons.length; i++) {
-        let currentButton = buttons[i];
-
+        currentButton = buttons[i];
         currentButton.addEventListener('click', onCalculatorButtonClick);
       }
     </script>

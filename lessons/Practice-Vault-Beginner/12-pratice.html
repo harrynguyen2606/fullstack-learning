@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Print Names from Array</title>
+    <style></style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>List of Names</h2>
+      <div class="form">
+        <input class="input" min="-999" max="999" type="number" />
+        <button class="button">Print</button>
+      </div>
+      <ul class="list"></ul>
+    </div>
+    <script>
+      let button = document.querySelector('.button');
+      let input = document.querySelector('.input');
+      let list = document.querySelector('.list');
+      let onButtonClicked = function () {
+        let number = Number(input.value);
+        if (number > 0) {
+          let items = [];
+          for (let i = 1; i <= number; i++) {
+            items.push(`<li class="list-item">${i}</li>`);
+          }
+          let allItemsContent = items.join('1234');
+          list.innerHTML = allItemsContent;
+        } else {
+          alert('You need to input an positive number');
+        }
+      };
+      button.addEventListener('click', onButtonClicked);
+    </script>
+  </body>
+</html>

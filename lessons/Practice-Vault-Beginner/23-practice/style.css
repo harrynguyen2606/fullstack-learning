@@ -1,0 +1,75 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+}
+.list {
+  margin-top: 20px;
+  padding: 50px;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.list-item {
+  padding: 30px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.list-item img {
+  width: 180px;
+  height: 180px;
+  border: 1px solid #eee;
+}
+
+.list-item img:hover {
+  box-shadow: 0 0 20px blue;
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.lightbox-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.lightbox-title {
+  font-size: 30px;
+  text-align: center;
+  background-color: #fff;
+  padding: 10px 30px;
+}
+
+.lightbox-img {
+  border: 2px solid #fff;
+  max-height: 600px;
+}
+
+.lightbox-button {
+  font-size: 20px;
+  border: none;
+  background: #ccc;
+  border-radius: 0;
+  padding: 10px 30px;
+}
+
+.lightbox-button:hover {
+  background: #aaa;
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,110 @@
+{
+  "title": "Australian History Quiz",
+  "items": [
+    {
+      "question": "When did the First Fleet arrive in Australia?",
+      "answers": [
+        {
+          "text": "1770",
+          "correct": false
+        },
+        {
+          "text": "1788",
+          "correct": true
+        },
+        {
+          "text": "1800",
+          "correct": false
+        },
+        {
+          "text": "1820",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "Who was the first European to map the coast of Australia?",
+      "answers": [
+        {
+          "text": "Captain James Cook",
+          "correct": true
+        },
+        {
+          "text": "William Dampier",
+          "correct": false
+        },
+        {
+          "text": "Abel Tasman",
+          "correct": false
+        },
+        {
+          "text": "Matthew Flinders",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "What year did Australia become a federation?",
+      "answers": [
+        {
+          "text": "1890",
+          "correct": false
+        },
+        {
+          "text": "1901",
+          "correct": true
+        },
+        {
+          "text": "1910",
+          "correct": false
+        },
+        {
+          "text": "1920",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "Who was the first Prime Minister of Australia?",
+      "answers": [
+        {
+          "text": "Edmund Barton",
+          "correct": true
+        },
+        {
+          "text": "Alfred Deakin",
+          "correct": false
+        },
+        {
+          "text": "George Reid",
+          "correct": false
+        },
+        {
+          "text": "John Curtin",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "What event is celebrated on January 26th in Australia?",
+      "answers": [
+        {
+          "text": "Anzac Day",
+          "correct": false
+        },
+        {
+          "text": "Australia Day",
+          "correct": true
+        },
+        {
+          "text": "Labour Day",
+          "correct": false
+        },
+        {
+          "text": "Melbourne Cup",
+          "correct": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Counter</title>
+  </head>
+  <body>
+    <button class="minus">-1</button>
+    <input class="result" type="number" value="0" />
+    <button class="plus">+1</button>
+  </body>
+  <script>
+    // goi class name
+    let minusButton = document.querySelector('.minus');
+    let resultValue = document.querySelector('.result');
+    let plusButton = document.querySelector('.plus');
+    // click chon chuc nang
+    let onMinusButtonClick = function () {
+      // when click, decrease the 1 number
+      // 1. current value
+      let currentValue = resultValue.value;
+      // 2. minus value
+      let newValue = currentValue - 1;
+      // 3. set new value
+      resultValue.value = newValue;
+    };
+    minusButton.addEventListener('click', onMinusButtonClick);
+    let onPlusbuttonClick = function () {
+      // current value
+      let currentValue = resultValue.value;
+      // transfer string to number
+      let currentvalueAsNumber = parseInt(currentValue);
+      //plus value
+      let newValue = currentvalueAsNumber + 5;
+      //set a new value
+      resultValue.value = newValue;
+    };
+    plusButton.addEventListener('click', onPlusbuttonClick);
+  </script>
+</html>

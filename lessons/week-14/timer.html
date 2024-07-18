@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Week 14 - Timer</title>
+  </head>
+  <body>
+    <button data-component="timeout:set">setTimeout 5 seconds</button>
+    <button data-component="timeout:clear">clear setTimeout</button>
+    <button data-component="interval:set">setInterval 1 seconds</button>
+    <button data-component="interval:clear">clear setInterval</button>
+    <button data-component="log">simple console.log</button>
+
+    <script>
+      let setTimeoutButton = document.querySelector(
+        '[data-component="timeout:set"]'
+      );
+      let clearTimeoutButton = document.querySelector(
+        '[data-component="timeout:clear"]'
+      );
+      let setIntervalButton = document.querySelector(
+        '[data-component="interval:set"]'
+      );
+      let clearIntervalButton = document.querySelector(
+        '[data-component="interval:clear"]'
+      );
+      let logButton = document.querySelector('[data-component="log"]');
+      let timeoutTimer;
+      let intervalTimer;
+
+      setTimeoutButton.addEventListener('click', function () {
+        timeoutTimer = setTimeout(function () {
+          console.log('5 seconds has passed');
+        }, 5000);
+      });
+
+      clearTimeoutButton.addEventListener('click', function () {
+        clearTimeout(timeoutTimer);
+      });
+
+      setIntervalButton.addEventListener('click', function () {
+        intervalTimer = setInterval(function () {
+          console.log('1 second has passed');
+        }, 1000);
+      });
+
+      clearIntervalButton.addEventListener('click', function () {
+        clearInterval(intervalTimer);
+      });
+
+      logButton.addEventListener('click', function () {
+        console.log('***********************');
+        console.log('AAAAAAAA');
+      });
+    </script>
+  </body>
+</html>

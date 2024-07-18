@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>fuLL Name Collector</title>
+    <style>
+      body {
+        background-color: rgb(243, 235, 235);
+      }
+      .container {
+        margin: 30px;
+        background-color: white;
+        padding: 20px 10px;
+        border-radius: 20px;
+      }
+      .button,
+      .input {
+        background-color: blue;
+        font-size: 10px;
+        padding: 10px 20px;
+        border: 10px;
+        border-radius: 10px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Enter your name</h2>
+      <input type="text" placeholder="First Name" class="firstName" />
+      <input type="text" placeholder="Last Name" class="lastName" />
+      <button class="button">Show Full Name</button>
+      <div class="fullName">Full Name:</div>
+    </div>
+
+    <script>
+      let firstNameInput = document.querySelector('.firstName');
+      let lastNameInput = document.querySelector('.lastName');
+      let fullNameInput = document.querySelector('.fullName');
+      let button = document.querySelector('button');
+      let onButtonClicked = function () {
+        let firstName = firstNameInput.value;
+        let lastName = lastNameInput.value;
+        fullNameInput.innerHTML = `Full Name: ${firstName}${lastName}`;
+        button.addEventListener('click', onButtonClicked);
+      };
+    </script>
+  </body>
+</html>
