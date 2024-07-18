@@ -1,0 +1,110 @@
+{
+  "title": "Electric Cars Quiz",
+  "items": [
+    {
+      "question": "What is the main advantage of electric cars over traditional gasoline cars?",
+      "answers": [
+        {
+          "text": "Higher top speed",
+          "correct": false
+        },
+        {
+          "text": "Lower running costs and zero emissions",
+          "correct": true
+        },
+        {
+          "text": "More fuel options",
+          "correct": false
+        },
+        {
+          "text": "Cheaper manufacturing",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "Which company is known for popularizing electric cars with its Model S?",
+      "answers": [
+        {
+          "text": "Nissan",
+          "correct": false
+        },
+        {
+          "text": "Chevrolet",
+          "correct": false
+        },
+        {
+          "text": "Tesla",
+          "correct": true
+        },
+        {
+          "text": "Ford",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "What is the term for the device used to store electrical energy in electric cars?",
+      "answers": [
+        {
+          "text": "Fuel tank",
+          "correct": false
+        },
+        {
+          "text": "Battery",
+          "correct": true
+        },
+        {
+          "text": "Combustion chamber",
+          "correct": false
+        },
+        {
+          "text": "Generator",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "Which electric car model is known for being one of the best-selling electric vehicles of all time?",
+      "answers": [
+        {
+          "text": "Tesla Model 3",
+          "correct": true
+        },
+        {
+          "text": "Nissan Leaf",
+          "correct": false
+        },
+        {
+          "text": "Chevrolet Bolt",
+          "correct": false
+        },
+        {
+          "text": "BMW i3",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "What is regenerative braking in electric cars?",
+      "answers": [
+        {
+          "text": "A system that uses the car's engine to slow down",
+          "correct": false
+        },
+        {
+          "text": "A system that recharges the battery while braking",
+          "correct": true
+        },
+        {
+          "text": "A method to increase top speed",
+          "correct": false
+        },
+        {
+          "text": "A feature to improve fuel efficiency",
+          "correct": false
+        }
+      ]
+    }
+  ]
+}

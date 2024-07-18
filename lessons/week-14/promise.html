@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Week 14 - Timer</title>
+  </head>
+  <body>
+    <button data-component="button1">Display an alert after 3 seconds</button>
+    <button data-component="button2">
+      Throw error if longer than 5 seconds
+    </button>
+    <button data-component="button3">A series of computation</button>
+    <script>
+      let button3 = document.querySelector('[data-component="button3"]');
+      let giveMeThreeAfterOneSecond = function () {
+        return new Promise(function (resolve) {
+          setTimeout(function () {
+            resolve(3);
+          }, 1000);
+        });
+      };
+      button3.addEventListener('click', function () {
+        let total = 0;
+
+        giveMeThreeAfterOneSecond()
+          .then(function (num) {
+            let value = 100 - num;
+
+            return value;
+          })
+          .then(function (num) {
+            total = total + num;
+
+            return giveMeThreeAfterOneSecond();
+          })
+          .then(function (num) {
+            total = total + num;
+
+            alert('Final total', total);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      });
+    </script>
+  </body>
+</html>

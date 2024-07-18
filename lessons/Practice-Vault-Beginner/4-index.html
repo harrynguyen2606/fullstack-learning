@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>fuLL Name Collector</title>
+    <style>
+      body {
+        background-color: rgb(243, 235, 235);
+      }
+      .container {
+        margin: auto;
+        background: white;
+        width: 400px;
+        padding: 20px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 5px 10px rgba(44, 25, 120, 0.1);
+      }
+      .button,
+      input {
+        width: 100%;
+        font-size: 15px;
+        padding: 10px 0;
+        margin-bottom: 10px;
+        border-radius: 20px;
+        border: 1px solid #707571;
+      }
+      input {
+        text-indent: 20px;
+      }
+      button {
+        background-color: rgb(39, 80, 241);
+        color: white;
+        border: none;
+      }
+      button:hover {
+        background-color: #007bff;
+      }
+      #output {
+        margin-top: 20px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Convert Text to Uppercase</h2>
+      <div>
+        <input type="text" id="textInput" placeholder="Enter text here" />
+      </div>
+      <div><button class="button">Convert uppercase</button></div>
+      <div id="output"></div>
+    </div>
+
+    <script>
+      let button = document.querySelector('button');
+      let output = document.querySelector('#output');
+      let input = document.querySelector('#textInput');
+      let onButtonClicked = function () {
+        let inputValue = input.value;
+        let uppercaseText = inputValue.toUpperCase();
+        output.innerHTML = uppercaseText;
+      };
+      button.addEventListener('click', onButtonClicked);
+    </script>
+  </body>
+</html>

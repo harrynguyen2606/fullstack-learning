@@ -1,0 +1,58 @@
+1. we build the quiz selection so user can pick their quiz
+2. When user pick a quiz, quiz selection will notify the brain main.js about which quiz user selects
+3. The brain main.js will fetch the quiz data based on the quiz user selects earlier
+   -- 3.1 The brain main.js will ask the Timer to start running
+   3.2 When Timer receives the instruction to start running:
+
+- Display the timer clock 00:00
+- Start ticking the clock and save the number seconds
+- Everytime the seconds goes up, convert the seconds into 00:00:00 and set it to our clock
+
+  3.3 When user changes the selection, the brain main.js will ask the timer to stop
+  3.4. When user submits the quiz the brain main.js will ask the timer to stop
+
+4. The brain uses the loaded data to ask:
+   -- Reset the total score to 0
+
+- Ask:
+  - Quiz Content to show up
+  - Quiz Navigation to show up
+  - Timer to show up
+  - Report will hide
+- Quiz Navigation to build its navigation based on the selected quiz data
+- Quiz Content to build its questions and answers
+
+5. When Quiz Navigation receives the selected quiz data, it builds the pagination
+
+- The pagination will highlight the question item that is being selected
+- When clicking the Next button, the next question item will be selected and highlighted
+- When clicking the Previous button, the previous question item will be selected and highlighted
+- When clicking any pagination item, the selected question item will be selected and highlighted
+- When the selected question item is the last item in the list, the Next button will become the Submit button
+- When the selected question item is the first item in the list, the Previous button will be disabled
+- When the Submit button is clicked, we need to notify the brain main.js
+- When the selected question item is changed, we need to notify the brain main.js
+
+6. When Quiz Content receives the selected quiz data, it builds the list of questions and the corresponding answers of each question based on the quiz data
+
+- We will display only 1 question and its corresponding answers at any given time
+- When user clicks an answer, we will display the cross icon + danger style if it's incorrect
+- When user clicks an answer, we will display the tick icon + success style if it's correct
+- When user clicks an answer, all the answers of that questions will be disabled
+  -- When user clicks an answer, it will notify the brain main.js - Tyson: Send the whole list of [true, false, ....] (5 items) back - Kevin: Send the whole list - Hoang: Notify true/false of the current question - if we only about total score user can get then this is the simplest way - Hai
+
+7. The brain main.js will use the information provided by Quiz Navigation which is the selected question item (index) to:
+
+- The brain will notify Quiz Content to jump to the same selected question item like the one in Quiz Navigation
+
+8. The brain main.js will use the information provided by Quiz Content on whether the answer user selects is correct or not to:
+   -- To keep track of the total score by adding 1 to the total score if the answer is correct
+
+9. When the brain main.js is notified that user is submitting the quiz, the brain will:
+
+- Get the total score
+- Get the time from the Timer
+- Ask the report to display:
+  - The total score
+  - The timer user has spent
+- Ask all other components to hide themselves:
