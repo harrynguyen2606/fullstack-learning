@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic List Modification</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+      .container {
+        max-width: 700px;
+        background: white;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      button {
+        padding: 8px 30px;
+        font-size: 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .danger {
+        background-color: #dd3838;
+      }
+      .danger:hover {
+        background-color: #b62c2c;
+      }
+      .warning {
+        background-color: #c2981a;
+      }
+      .warning:hover {
+        background-color: #8a6d16;
+      }
+
+      .list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .horizontal-layout {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+
+      .horizontal-layout .item {
+        display: flex;
+        width: 70px;
+        height: 70px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .item {
+        margin-bottom: 5px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f8f8f8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Manage List Items</h2>
+      <div>
+        <button data-component="add-first">Insert at the start</button>
+        <button class="danger" data-component="remove-first">
+          Remove first item
+        </button>
+      </div>
+
+      <div>
+        <button data-component="add-last">Insert at the end</button>
+        <button class="danger" data-component="remove-last">
+          Remove last item
+        </button>
+      </div>
+
+      <button class="warning" data-component="change-layout">
+        Change to "Horizontal" layout
+      </button>
+      <ul class="list"></ul>
+    </div>
+    <script>
+      let list = document.querySelector('.list');
+
+      let onAddFirst = function () {
+        let newItem = document.createElement('li');
+
+        newItem.classList.add('item');
+
+        list.appendChild(newItem);
+
+        updateAllItemsContent();
+      };
+      let onRemoveFirst = function () {
+        let allChildren = list.querySelectorAll('li');
+        let firstChild = allChildren[0];
+
+        if (firstChild) {
+          firstChild.remove();
+          updateAllItemsContent();
+        } else {
+          alert('There is nothing to remove');
+        }
+      };
+      let updateAllItemsContent = function () {
+        // Update text of all children
+        let allChildren = list.querySelectorAll('li');
+
+        for (let i = 0; i < allChildren.length; i++) {
+          let item = allChildren[i];
+
+          item.innerHTML = i + 1;
+        }
+      };
+
+      let onAddLast = function () {
+        let allChildren = list.querySelectorAll('li');
+        let newItemContent = allChildren.length + 1;
+        let newItem = document.createElement('li');
+
+        newItem.classList.add('item');
+
+        newItem.innerHTML = newItemContent;
+
+        list.appendChild(newItem);
+      };
+      let onRemoveLast = function () {
+        let allChildren = list.querySelectorAll('li');
+        let lastChild = allChildren[allChildren.length - 1];
+
+        if (lastChild) {
+          lastChild.remove();
+        } else {
+          alert('There is nothing to remove');
+        }
+      };
+
+      let onChangeLayout = function (e) {
+        let layoutButton = e.target;
+
+        if (list.classList.contains('horizontal-layout')) {
+          list.classList.remove('horizontal-layout');
+          layoutButton.innerHTML = 'Change to "Horizontal" layout';
+        } else {
+          list.classList.add('horizontal-layout');
+          layoutButton.innerHTML = 'Change to "Vertical" layout';
+        }
+      };
+
+      document
+        .querySelector('[data-component="add-first"]')
+        .addEventListener('click', onAddFirst);
+      document
+        .querySelector('[data-component="remove-first"]')
+        .addEventListener('click', onRemoveFirst);
+      document
+        .querySelector('[data-component="add-last"]')
+        .addEventListener('click', onAddLast);
+      document
+        .querySelector('[data-component="remove-last"]')
+        .addEventListener('click', onRemoveLast);
+      document
+        .querySelector('[data-component="change-layout"]')
+        .addEventListener('click', onChangeLayout);
+    </script>
+  </body>
+</html>
