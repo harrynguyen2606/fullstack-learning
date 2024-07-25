@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Week 23</title>
+  </head>
+  <body>
+    <button data-component="larger">Console.log values larger than 10</button>
+    <button data-component="smaller">Console.log values smaller than 10</button>
+    <button data-component="male">Console.log all "male"</button>
+
+    <script>
+      const numbers = [1, 35, 60, 5, 888, 2];
+      const people = [
+        {
+          name: 'Alice',
+          gender: 'female',
+        },
+        {
+          name: 'Jack',
+          gender: 'male',
+        },
+        {
+          name: 'Henry',
+          gender: 'male',
+        },
+      ];
+      const onLargerButtonClicked = () => {
+        const items = numbers.filter((currentNumber) => {
+          return currentNumber > 10;
+        });
+
+        // for (let i = 0; i < numbers.length; i++) {
+        //   const currentNumber = numbers[i];
+
+        //   if (currentNumber > 10) {
+        //     items.push(currentNumber);
+        //   }
+        // }s
+
+        console.log(items);
+      };
+      const onMaleFilterButtonClicked = () => {
+        // const items = people.filter((person) => {
+        //   return person.gender === 'male';
+        // });
+
+        const items = [];
+
+        for (let i = 0; i < people.length; i++) {
+          const person = people[i];
+
+          if (person.gender === 'male') {
+            items.push(person);
+          }
+        }
+
+        console.log(items);
+      };
+
+      document
+        .querySelector('[data-component="larger"]')
+        .addEventListener('click', onLargerButtonClicked);
+
+      document
+        .querySelector('[data-component="male"]')
+        .addEventListener('click', onMaleFilterButtonClicked);
+    </script>
+  </body>
+</html>
